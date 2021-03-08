@@ -1,25 +1,36 @@
 const simpleRandom = require('./Population Sampling/SimpleRandomSample');
 const systematic = require('./Population Sampling/SystematicSample');
+const confidenceInterval = require('./Population Sampling/ConfidenceInterval');
 
 class PopulationSamplingOperations{
-    static SimpleRandom(a,b){
-        if (!Array.isArray(a)){
+    static SimpleRandom(elements,amount){
+        if (!Array.isArray(elements)){
             throw new Error('a must be an Array');
         }
-        else if (a.length===0){
+        else if (elements.length===0){
             throw new Error('a cannot be empty'); // Theoretically, it could be. But the project spec says no.
         }
-        return simpleRandom(a,b)
+        return simpleRandom(elements,amount);
     }
 
-    static Systematic(a,b){
-        if (!Array.isArray(a)){
+    static Systematic(elements,interval){
+        if (!Array.isArray(elements)){
             throw new Error('a must be an Array');
         }
-        else if (a.length===0){
+        else if (elements.length===0){
             throw new Error('a cannot be empty'); // Theoretically, it could be. But the project spec says no.
         }
-        return systematic(a,b)
+        return systematic(elements, interval);
+    }
+
+    static ConfidenceInterval(elements, confidencePercentile){
+        if (!Array.isArray(elements)){
+            throw new Error('a must be an Array');
+        }
+        else if (elements.length===0){
+            throw new Error('a cannot be empty'); // Theoretically, it could be. But the project spec says no.
+        }
+        return confidenceInterval(elements, confidencePercentile);
     }
 }
 
