@@ -64,3 +64,20 @@ test('Random Item from List by Seed', () => {
     console.log("Expected:",randomItem,"Result:",resultList.randomItemFromList(testList, 12));
     expect(resultList.randomItemFromList(testList, 12)).toBe(randomItem)
 });
+
+test('Random Items from List', () => {
+    console.log("******** Random Items from List Test ********");
+    let resultList = new RandomGenerator();
+    let testList = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    console.log(resultList.randomItemsFromList(testList, 5))
+});
+
+test('Random Items from List by Seed', () => {
+    console.log("******** Random Items from List By Seed Test ********");
+    let resultList = new RandomGenerator();
+    let testList = [1,2,3,4,5,6,7,8,9,10]
+    let expectedList = [ 8, 6, 10, 7, 4 ]
+    resultList = resultList.randomItemsFromList(testList, 5, 3);
+    console.log("Expected:",expectedList,"Result:",resultList)
+    expect(resultList).toStrictEqual(expectedList)
+});
