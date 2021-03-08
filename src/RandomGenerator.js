@@ -35,11 +35,13 @@ class RandomGenerator{
 
     //Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
     randomIntList(min, max, n, seed){
-        return randomListOfNum.generateIntList(min, max, n, seed);
+        let rndGen = new randomListOfNum()
+        return rndGen.generateIntList(min, max, n, seed);
     }
 
     randomFloatList(min, max, n , seed){
-        return randomListOfNum.generateFloatList(min, max, n, seed);
+        let rndGen = new randomListOfNum()
+        return rndGen.generateFloatList(min, max, n, seed);
     }
 }
 
