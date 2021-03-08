@@ -1,6 +1,8 @@
 const randomNumber = require('./RandomFunctions/randomNumber.js');
 const randomNumberBySeed = require('./RandomFunctions/randomNumberBySeed.js')
 const randomListOfNum = require('./RandomFunctions/randomListOfNum.js')
+const randomItemFromList = require('./RandomFunctions/randomItemFromList.js')
+const randomItemFromListBySeed = require('./RandomFunctions/randomItemFromListBySeed')
 
 class RandomGenerator{
     //Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
@@ -14,11 +16,6 @@ class RandomGenerator{
         return rndGen.randomFloat(min, max);
     }
     /*
-
-
-
-    Select a random item from a list
-    Set a seed and randomly.select the same value from a list
     Select N number of items from a list without a seed
     Select N number of items from a list with a seed
     */
@@ -35,13 +32,25 @@ class RandomGenerator{
 
     //Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
     randomIntList(min, max, n, seed){
-        let rndGen = new randomListOfNum()
+        let rndGen = new randomListOfNum();
         return rndGen.generateIntList(min, max, n, seed);
     }
 
     randomFloatList(min, max, n , seed){
-        let rndGen = new randomListOfNum()
+        let rndGen = new randomListOfNum();
         return rndGen.generateFloatList(min, max, n, seed);
+    }
+
+    //Select a random item from a list
+    randomItemFromList(list){
+        let rndGen = new randomItemFromList();
+        return rndGen.generateRandomItem(list);
+    }
+
+    //Set a seed and randomly select the same value from a list
+    randomItemFromList(list, seed){
+        let rndGen = new randomItemFromListBySeed();
+        return rndGen.generateRandomItem(list, seed);
     }
 }
 

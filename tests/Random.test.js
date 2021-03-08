@@ -48,3 +48,19 @@ test('Random Float List Generation', () => {
     console.log("Expected:",testList,"Result:",resultList.randomFloatList(0, 100, 5, 10))
     expect(resultList.randomFloatList(0, 100, 5, 10)).toStrictEqual(testList)
 });
+
+test('Random Item from List', () => {
+    console.log("******** Random Item from List Test ********");
+    let rndItem = new RandomGenerator();
+    let testList = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    console.log("Random Item from '",testList,"':",rndItem.randomItemFromList(testList));
+});
+
+test('Random Item from List by Seed', () => {
+    console.log("******** Random Item from List By seed Test ********");
+    let resultList = new RandomGenerator();
+    let testList = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    let randomItem = 2
+    console.log("Expected:",randomItem,"Result:",resultList.randomItemFromList(testList, 12));
+    expect(resultList.randomItemFromList(testList, 12)).toBe(randomItem)
+});
