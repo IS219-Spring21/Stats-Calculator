@@ -15,7 +15,9 @@ Dale Schofield
   - Population Sampling functions
 
 # Changelog
-3/8/21 - Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis
+## 3/8/21 - 
+  Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis
+  Ido - Added Random Generation Functions and test cases
 # Sources
 
 Source Name
