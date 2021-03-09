@@ -13,14 +13,14 @@ class PopulationSamplingOperations{
         return simpleRandom(elements,amount);
     }
 
-    static Systematic(elements,interval){
+    static Systematic(elements,amount){
         if (!Array.isArray(elements)){
             throw new Error('a must be an Array');
         }
         else if (elements.length===0){
             throw new Error('a cannot be empty'); // Theoretically, it could be. But the project spec says no.
         }
-        return systematic(elements, interval);
+        return systematic(elements, amount);
     }
 
     static ConfidenceInterval(elements, confidencePercentile){
