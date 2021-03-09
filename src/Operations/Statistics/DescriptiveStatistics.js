@@ -60,8 +60,8 @@ class StatisticsOperations extends Calculator {
         return this.Quotient(addition,n);
     }
 
-    StandardDeviation(a,b) {
-
+    StandardDeviation(values) {
+        return this.Root(this.Variance(values));
     }
 
     Quartiles(a,b) {
@@ -80,8 +80,12 @@ class StatisticsOperations extends Calculator {
 
     }
 
-    ZScore(a,b) {
-
+    ZScore(values) {
+        let mean = this.Mean(values);
+        let StDev = this.StandardDeviation(values);
+        return values.map(function(num){
+            return (num - mean) / StDev;
+        });
     }
 }
 
