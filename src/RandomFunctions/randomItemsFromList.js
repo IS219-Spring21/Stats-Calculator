@@ -2,7 +2,13 @@ const random = require('random')
 
 class randomItemsFromList{
     generateRandomList(list, n){
-        if(n > list.length){
+        if(!Array.isArray(list)){
+            return "ERROR: List parameter is not array"
+        }
+        else if(list === undefined || list.length === 0){
+            return "ERROR: List is empty"
+        }
+        else if(n > list.length){
             return "ERROR: n is greater then list length"
         }
         let outputList = []
