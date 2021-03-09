@@ -32,3 +32,22 @@ test('SimpleRandomSample no duplicates', () => {
     let sample = PopOps.SimpleRandom(elements, elements.length-1);
     expect(checkInBounds(elements,sample)).toBeTruthy();
 });
+
+test('SystematicSample correct amount', () => {
+    expect(PopOps.Systematic([1,2,3,4], 1)).toHaveLength(1); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 2)).toHaveLength(2); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 3)).toHaveLength(3); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 4)).toHaveLength(4); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 5)).toHaveLength(5); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 3)).toHaveLength(3); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 8)).toHaveLength(8); //substitute list for random number list later
+});
+test('SystematicSample correct numbers', () => {
+    expect(PopOps.Systematic([1,2,3,4], 1)).toEqual([1]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 2)).toEqual([1,3]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 3)).toEqual([1,2,3]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4], 4)).toEqual([1,2,3,4]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 5)).toEqual([1,3,5,7,9]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 3)).toEqual([1,4,7]); //substitute list for random number list later
+    expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 8)).toEqual([1,2,3,4,5,6,7,8]); //substitute list for random number list later
+});
