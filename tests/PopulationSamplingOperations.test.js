@@ -51,3 +51,9 @@ test('SystematicSample correct numbers', () => {
     expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 3)).toEqual([1,4,7]); //substitute list for random number list later
     expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 8)).toEqual([1,2,3,4,5,6,7,8]); //substitute list for random number list later
 });
+
+test('Confidence interval correctness', () => {
+    let result = PopOps.ConfidenceInterval([45,55,67,48,68,79,98,87,84,82], 0.95);
+    expect(result[0]).toBeCloseTo(60.88, 2);
+    expect(result[1]).toBeCloseTo(81.72, 2);
+});
