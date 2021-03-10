@@ -1,4 +1,4 @@
-const Math = require('mathjs');
+const Math = require("mathjs");
 
 /**
  * @return {number}
