@@ -1,5 +1,4 @@
 const Math = require('mathjs');
-//const Root = require("../Root");
 
 /**
  * @return {number}
