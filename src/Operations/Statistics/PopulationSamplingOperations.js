@@ -2,6 +2,7 @@ const simpleRandom = require('./Population Sampling/SimpleRandomSample');
 const systematic = require('./Population Sampling/SystematicSample');
 const confidenceInterval = require('./Population Sampling/ConfidenceInterval');
 const marginError = require('./Population Sampling/MarginError');
+const cochran = require('./Population Sampling/Cochran');
 
 class PopulationSamplingOperations{
     static SimpleRandom(elements,amount){
@@ -42,6 +43,10 @@ class PopulationSamplingOperations{
             throw new Error('a cannot be empty'); // Theoretically, it could be. But the project spec says no.
         }
         return marginError(elements, confidencePercentile);
+    }
+
+    static Cochran(precision, confidencePercent, proportion){
+        return cochran(precision, confidencePercent, proportion);
     }
 }
 

@@ -962,3 +962,8 @@ test('Margin of error correctness',()=>{
     ], 0.90);
     expect(result).toBeCloseTo(0.021385)
 });
+
+test('Cochran correctness', () => {
+    let result = PopOps.Cochran(0.05, 0.95, 0.5);
+    expect(Math.ceil(result)).toBeCloseTo(385);
+});
