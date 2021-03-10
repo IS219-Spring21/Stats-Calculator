@@ -967,3 +967,13 @@ test('Cochran correctness', () => {
     let result = PopOps.Cochran(0.05, 0.95, 0.5);
     expect(Math.ceil(result)).toBeCloseTo(385);
 });
+
+test('Sample size with CI and Width (no std dev)', () => {
+    let result = PopOps.SampleSizeCI(0.95, 0.06);
+    expect(Math.ceil(result)).toBeCloseTo(1068);
+});
+
+test('Sample size with CI and Width (with std dev)', () => {
+    let result = PopOps.SampleSizeCI(0.99, 1, 2.9);
+    expect(Math.ceil(result)).toBeCloseTo(224);
+});

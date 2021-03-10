@@ -3,6 +3,7 @@ const systematic = require('./Population Sampling/SystematicSample');
 const confidenceInterval = require('./Population Sampling/ConfidenceInterval');
 const marginError = require('./Population Sampling/MarginError');
 const cochran = require('./Population Sampling/Cochran');
+const sampleSizeCI = require('./Population Sampling/SampleSizeCI');
 
 class PopulationSamplingOperations{
     static SimpleRandom(elements,amount){
@@ -47,6 +48,10 @@ class PopulationSamplingOperations{
 
     static Cochran(precision, confidencePercent, proportion){
         return cochran(precision, confidencePercent, proportion);
+    }
+
+    static SampleSizeCI(confidencePercentile, width, popStdDev = null){
+        return sampleSizeCI(confidencePercentile, width, popStdDev);
     }
 }
 
