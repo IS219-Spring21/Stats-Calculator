@@ -1,9 +1,5 @@
-const Math = require('mathjs');
-//const Root = require("../Root");
+const Math = require("mathjs");
 
-/**
- * @return {number}
- */
 function StandardDeviation(values) {
     return Math.sqrt(Math.variance(values));
 }
