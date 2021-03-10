@@ -19,7 +19,9 @@ Andy Marmolejos
   - Descriptive Statistics functions
 
 # Changelog
-3/8/21 - Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis
+## 3/8/21
+  Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis <br>
+  Ido - Added Random Generation Functions and test cases
 # Sources
 
 Source Name
