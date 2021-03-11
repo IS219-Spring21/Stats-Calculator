@@ -15,6 +15,7 @@
   "devDependencies": {
     "coveralls": "^3.1.0",
     "jest": "^26.6.3",
+    "jstat": "^1.9.4",
     "seedrandom": "^3.0.5",
     "stats-lib": "^1.1.2"
   },
