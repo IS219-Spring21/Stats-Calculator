@@ -32,6 +32,15 @@ test('SimpleRandomSample no duplicates', () => {
     let sample = PopOps.SimpleRandom(elements, elements.length-1);
     expect(checkInBounds(elements,sample)).toBeTruthy();
 });
+test('SimpleRandomSample correct amount given larger input', () => {
+    expect(PopOps.SimpleRandom([1,2,3,4], 5)).toHaveLength(4); //substitute list for random number list later
+});
+test('SimpleRandomSample passing in not array', () => {
+    expect(()=>{PopOps.SimpleRandom("test", 5)}).toThrowError("a must be an Array"); //substitute list for random number list later
+});
+test('SimpleRandomSample passing in not array', () => {
+    expect(()=>{PopOps.SimpleRandom([], 5)}).toThrowError("a cannot be empty"); //substitute list for random number list later
+});
 
 test('SystematicSample correct amount', () => {
     expect(PopOps.Systematic([1,2,3,4], 1)).toHaveLength(1); //substitute list for random number list later
@@ -51,11 +60,26 @@ test('SystematicSample correct numbers', () => {
     expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 3)).toEqual([1,4,7]); //substitute list for random number list later
     expect(PopOps.Systematic([1,2,3,4,5,6,7,8,9,10], 8)).toEqual([1,2,3,4,5,6,7,8]); //substitute list for random number list later
 });
+test('SystematicSample correct amount given larger input', () => {
+    expect(PopOps.Systematic([1,2,3,4], 5)).toHaveLength(4); //substitute list for random number list later
+});
+test('SystematicSample passing in not array', () => {
+    expect(()=>{PopOps.Systematic("test", 5)}).toThrowError("a must be an Array"); //substitute list for random number list later
+});
+test('SystematicSample passing in not array', () => {
+    expect(()=>{PopOps.Systematic([], 5)}).toThrowError("a cannot be empty"); //substitute list for random number list later
+});
 
 test('Confidence interval correctness', () => {
     let result = PopOps.ConfidenceInterval([45,55,67,48,68,79,98,87,84,82], 0.95);
     expect(result[0]).toBeCloseTo(60.88, 2);
     expect(result[1]).toBeCloseTo(81.72, 2);
+});
+test('Confidence interval passing in not array', () => {
+    expect(()=>{PopOps.ConfidenceInterval("test", 5)}).toThrowError("a must be an Array"); //substitute list for random number list later
+});
+test('Confidence interval passing in not array', () => {
+    expect(()=>{PopOps.ConfidenceInterval([], 5)}).toThrowError("a cannot be empty"); //substitute list for random number list later
 });
 
 test('Margin of error correctness',()=>{
@@ -961,6 +985,12 @@ test('Margin of error correctness',()=>{
         2.42
     ], 0.90);
     expect(result).toBeCloseTo(0.021385)
+});
+test('Margin of error passing in not array', () => {
+    expect(()=>{PopOps.MarginError("test", 5)}).toThrowError("a must be an Array"); //substitute list for random number list later
+});
+test('Margin of error passing in not array', () => {
+    expect(()=>{PopOps.MarginError([], 5)}).toThrowError("a cannot be empty"); //substitute list for random number list later
 });
 
 test('Cochran correctness', () => {
