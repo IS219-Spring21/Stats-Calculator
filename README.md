@@ -20,9 +20,15 @@ Andy Marmolejos
 
 # Changelog
 ## 3/8/21
-  Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis <br>
+  Dale - Commit of initial calculator files and configuration of Jest, Coveralls, and Travis. Also added Simple Random Sample and Systematic Sample functions and tests. <br>
   Ido - Added Random Generation Functions and test cases <br>
   Andy - Commit for Statistics functions and tests
+## 3/9/21
+Dale - Added Confidence Interval function and tests + bugfixes<br>
+## 3/10/21
+Dale - Added Margin of Error, Cochran's, and Sample Size functions and tests<br>
+## 3/12/21
+Dale - Added more tests<br>
 # Sources
 
 Source Name
