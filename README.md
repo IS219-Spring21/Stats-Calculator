@@ -29,6 +29,8 @@ Dale - Added Confidence Interval function and tests + bugfixes<br>
 Dale - Added Margin of Error, Cochran's, and Sample Size functions and tests<br>
 ## 3/12/21
 Dale - Added more tests<br>
+## 3/14/21
+Dale - Extended Calculator to ScientificCalculator and added Population Sampling functions<br>
 # Sources
 
 Source Name
